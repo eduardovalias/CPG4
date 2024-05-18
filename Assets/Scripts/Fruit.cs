@@ -12,19 +12,21 @@ public class Fruit : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        manager = (CatchFruitManager) FindObjectOfType(typeof(CatchFruitManager));
+        manager = (CatchFruitManager)FindObjectOfType(typeof(CatchFruitManager));
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    void OnTriggerEnter2D(Collider2D coll) {
-        if(coll.gameObject.tag == "basket"){
-            manager.scoreCatchFruit++;
-        } 
+    void OnTriggerEnter2D(Collider2D coll)
+    {
+        if (coll.gameObject.tag == "basket")
+        {
+            manager.IncreaseCollected();
+        }
         Destroy(this.gameObject);
     }
 }
