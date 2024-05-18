@@ -427,14 +427,14 @@ MonoBehaviour:
   fruitPrefab: {fileID: 9027741990863222308, guid: 1496543cf76a68a4aac120129668ca3d, type: 3}
   scoreText: {fileID: 2001902500}
   initialTxt: {fileID: 1934713669}
-  fruitSpawnPositionYOffset: 8
-  fruitSpawnPositionXMinRange: -8
-  fruitSpawnPositionXMaxRange: 8
+  fruitSpawnPositionYOffset: 6
+  fruitSpawnPositionXMinRange: -10
+  fruitSpawnPositionXMaxRange: 6
   fruitGravityScaleMinRange: 3
-  fruitGravityScaleMaxRange: 5
+  fruitGravityScaleMaxRange: 4
   fruitsNumber: 15
   fruitSpawnIntervalReduceFactor: 0.1
-  fruitInicialSpawnInterval: 0.1
+  fruitInicialSpawnInterval: 2
   collected: 0
 --- !u!1 &953289537
 GameObject:
