@@ -8,7 +8,7 @@ public class PlayerCtrl : MonoBehaviour
     float speedX, speedY;
     Rigidbody2D rb;
     Vector2 velocity;
-    public float smoothTime = 0.3F;
+    public float smoothTime = 0.15F;
 
     // Start is called before the first frame update
     void Start()
