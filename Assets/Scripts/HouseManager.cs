@@ -7,6 +7,7 @@ public class HouseManager : MonoBehaviour
     public Transform playerTransform;
     public Transform doorTransform;
     public GameObject interact;
+    public GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,7 @@ public class HouseManager : MonoBehaviour
             
             if(Input.GetKeyDown(KeyCode.X))
             {
-                Debug.Log("Eh o dormes");
+                //gameManager
             }
         }
         else

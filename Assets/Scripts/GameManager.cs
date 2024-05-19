@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
         }
         straw = CatchFruitManager.collected;
         strawTxt.text = $"Morangos: {straw}";
-        coinTxt.text = $"Moedas: {coins}";
+        coinTxt.text = $"{coins}";
     }
 
     // Update is called once per frame
@@ -68,7 +68,12 @@ public class GameManager : MonoBehaviour
             isPlanted4 = true;
         }
 
-            coinTxt.text = $"Moedas: {ShopManagerCtrl.shopCoins}";
+            coinTxt.text = $"{ShopManagerCtrl.shopCoins}";
+    }
+
+    public void Sleep()
+    {
+        
     }
 
     public bool IsPlanted(int terrain)
