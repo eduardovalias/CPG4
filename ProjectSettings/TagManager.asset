@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - basket
+  - Event
   layers:
   - Default
   - TransparentFX
