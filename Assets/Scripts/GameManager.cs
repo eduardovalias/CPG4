@@ -8,7 +8,6 @@ using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
-    public int straw;
     public Button btnPlant1;
     public Button btnPlant2;
     public Button btnPlant3;
@@ -17,6 +16,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text strawTxt;
     public TMP_Text coinTxt;
     public static int coins;
+    public static int straw;
     public static bool sceneStartedOnce;
     public static bool isPlanted1;
     public static bool isPlanted2;
@@ -30,10 +30,9 @@ public class GameManager : MonoBehaviour
             Debug.Log(coins);
         if(!GameManager.sceneStartedOnce)
         {
-            GameManager.coins = 50;
-            GameManager.sceneStartedOnce = true;
+            coins = 50;
+            sceneStartedOnce = true;
         }
-        straw = CatchFruitManager.collected;
         strawTxt.text = $"Morangos: {straw}";
         coinTxt.text = $"{coins}";
     }
