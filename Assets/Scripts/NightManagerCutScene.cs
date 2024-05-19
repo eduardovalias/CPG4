@@ -12,15 +12,18 @@ public class NightDayManagerCutScene : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        int earned = 0;
         if (nextScene == "SampleScene")
         {
-            GameManager.coins += GameManager.straw * 2;
+
+            earned = GameManager.straw * 2;
+            GameManager.coins += earned;
             GameManager.straw = 0;
         }
 
         if (coinsTxt != null)
         {
-            coinsTxt.text = $"+{GameManager.coins}";
+            coinsTxt.text = $"+{earned}";
         }
 
         StartCoroutine(LoadMinigameCoroutine());
