@@ -6,6 +6,7 @@ using TMPro;
 public class NightMinigameManager : MonoBehaviour
 {
     public TMP_Text neutralizedText;
+    public TMP_Text initialText;
     public StrawberryNight prefab;
     public ZeMorangoNightCtrl ze;
     public float spawnInterval = 1f;
@@ -17,15 +18,22 @@ public class NightMinigameManager : MonoBehaviour
     private float timePassed = 0f;
     private int fruitsSpawnCount = 0;
     private bool gameOver = false;
+    private bool gameStart = false;
 
     void Start()
     {
         ze.ammo = fruitsNumber;
+        StartCoroutine(CloseInitialTxtCoroutine());
     }
 
     void Update()
     {
         if (gameOver)
+        {
+            return;
+        }
+
+        if (!gameStart)
         {
             return;
         }
@@ -76,5 +84,12 @@ public class NightMinigameManager : MonoBehaviour
     void UpdateNeutralizedText()
     {
         neutralizedText.text = $"x{neutralized}";
+    }
+
+    IEnumerator CloseInitialTxtCoroutine()
+    {
+        yield return new WaitForSeconds(3);
+        initialText.enabled = false;
+        gameStart = true;
     }
 }

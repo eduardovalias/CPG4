@@ -23,7 +23,7 @@ public class StrawberryNight : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.gameObject.tag == "basket")
+        if (coll.gameObject.tag == "bullet")
         {
             manager.IncreaseNeutralized();
         }

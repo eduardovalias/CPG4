@@ -33,6 +33,7 @@ public class ZeMorangoNightCtrl : MonoBehaviour
         {
             ammo--;
             Instantiate(bullet, transform.position, Quaternion.identity);
+            UpdateAmmoText();
         }
      }
 
