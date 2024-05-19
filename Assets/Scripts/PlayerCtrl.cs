@@ -9,13 +9,11 @@ public class PlayerCtrl : MonoBehaviour
     Rigidbody2D rb;
     Vector2 velocity;
     public float smoothTime = 0.15F;
-    private SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -28,7 +26,5 @@ public class PlayerCtrl : MonoBehaviour
         speedY = Mathf.SmoothDamp(speedY, newSpeedY, ref velocity.y, smoothTime);
         
         rb.velocity = new Vector2(speedX, speedY);
-
-        spriteRenderer.flipX = rb.velocity.x > 0f;
     }
 }

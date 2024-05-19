@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class CatchFruitManager : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class CatchFruitManager : MonoBehaviour
     public int fruitsNumber = 10;
     public float fruitSpawnIntervalReduceFactor = 0.1f;
     public float fruitInicialSpawnInterval = 2f;
-    public int collected = 0;
+    public static int collected = 0;
 
     private float curFruitSpawnInterval;
 
@@ -51,6 +52,7 @@ public class CatchFruitManager : MonoBehaviour
             if (fruitsSpawnCount == fruitsNumber)
             {
                 gameOver = true;
+                StartCoroutine(GameoverCoroutine());
             }
             else
             {
@@ -90,5 +92,11 @@ public class CatchFruitManager : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         initialTxt.enabled = false;
-    }   
+    }
+
+    IEnumerator GameoverCoroutine()
+    {
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene("SampleScene");
+    }
 }
