@@ -9,13 +9,15 @@ public class ShopManagerCtrl : MonoBehaviour
 {
 
     public int[,] shopItems = new int[5,5];
-    public float coins;
-    public Text coinsTXT;
+    public static int shopCoins;
+    public static int price;
+    public GameObject canvas;
+    public GameObject shop;
 
 
     void Start()
     {
-        coinsTXT.text = $"{coins} coins";
+        shopCoins = GameManager.coins;
 
         //ID's 
         shopItems[1,1] = 1; 
@@ -33,10 +35,19 @@ public class ShopManagerCtrl : MonoBehaviour
     public void Buy()
     {
         GameObject ButtonRef = GameObject.FindGameObjectWithTag("Event").GetComponent<EventSystem>().currentSelectedGameObject;
+        price = shopItems[2,ButtonRef.GetComponent<ButtonInfo>().ItemID];
 
-        if (coins >= shopItems[2,ButtonRef.GetComponent<ButtonInfo>().ItemID]){
-            coins -= shopItems[2,ButtonRef.GetComponent<ButtonInfo>().ItemID];
-            coinsTXT.text = $"{coins} coins";
+        if (shopCoins >= price){
+            shopCoins -= price;
+            canvas.SetActive(true);
+            shop.SetActive(false);
+
+            GameManager.coins = shopCoins;
         }
+    }
+
+    public void ExitShop()
+    {
+        shop.SetActive(false);
     }
 }
