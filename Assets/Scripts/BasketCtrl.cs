@@ -8,13 +8,15 @@ public class BasketCtrl : MonoBehaviour
     public float movSpeed;
     Rigidbody2D rb;
     SpriteRenderer spriteRenderer;
+    Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-
+        animator = GetComponent<Animator>();
+            
     }
 
     // Update is called once per frame
@@ -24,13 +26,20 @@ public class BasketCtrl : MonoBehaviour
         float input = Input.GetAxisRaw("Horizontal");
         float newSpeedX = input * movSpeed;
 
-        if (input > 0)
+        if (input == 0)
         {
-            spriteRenderer.flipX = true;
-        }
-        else if (input < 0)
+            animator.Play("IdleZeMorango");
+        } else
         {
-            spriteRenderer.flipX = false;
+            animator.Play("RunningZeMorango");
+            if (input > 0)
+            {
+                spriteRenderer.flipX = true;
+            }
+            else
+            {
+                spriteRenderer.flipX = false;
+            }
         }
 
         rb.velocity = new Vector2(newSpeedX, 0);
