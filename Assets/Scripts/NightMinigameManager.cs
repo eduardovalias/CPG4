@@ -14,7 +14,7 @@ public class NightMinigameManager : MonoBehaviour
     public int fruitsNumber;
     public int neutralized = 0;
     public float spawnX1 = -0.28f;
-    public float spawnX2 = 2.48f;
+    public float spawnX2 = 3.5f;
     public float spawnX3 = 8.47f;
     private float timePassed = 0f;
     private int fruitsSpawnCount = 0;
@@ -47,7 +47,7 @@ public class NightMinigameManager : MonoBehaviour
             if (fruitsSpawnCount == fruitsNumber)
             {
                 gameOver = true;
-                //GameManager.straw += neutralized;
+                GameManager.straw = neutralized;
                 StartCoroutine(GameOverCoroutine());
             }
 

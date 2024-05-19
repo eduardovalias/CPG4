@@ -11,12 +11,14 @@ public class ZeMorangoNightCtrl : MonoBehaviour
     public GameObject bullet;
     public TMP_Text ammoText;
     Rigidbody2D rb;
+    Animator animator;
 
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         ammo = GameManager.straw;
         UpdateAmmoText();
     }
@@ -33,8 +35,11 @@ public class ZeMorangoNightCtrl : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.X) && ammo > 0)
         {
+            var pos = transform.position;
+            pos.x += 1;
             ammo--;
-            Instantiate(bullet, transform.position, Quaternion.identity);
+            animator.SetTrigger("shoot");
+            Instantiate(bullet, pos, Quaternion.identity);
             UpdateAmmoText();
         }
      }

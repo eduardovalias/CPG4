@@ -5,13 +5,8 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
 
-    public float velocity;
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
+    public float velocity = 12f;
 
-    // Update is called once per frame
     void Update()
     {
         Vector3 currentPosition = transform.position;
