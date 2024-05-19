@@ -52,6 +52,7 @@ public class CatchFruitManager : MonoBehaviour
             if (fruitsSpawnCount == fruitsNumber)
             {
                 gameOver = true;
+                GameManager.straw += collected;
                 StartCoroutine(GameoverCoroutine());
             }
             else

@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NightMinigame.unity
     guid: c67469574209143be847eba8e67b3cc9
+  - enabled: 1
+    path: Assets/Scenes/Day.unity
+    guid: 81edf02e42bb64beab4129121e49f146
+  - enabled: 1
+    path: Assets/Scenes/Night.unity
+    guid: 49ac934547c2940a597e52d529090281
   m_configObjects: {}

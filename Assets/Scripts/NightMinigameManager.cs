@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class NightMinigameManager : MonoBehaviour
 {
@@ -12,9 +13,9 @@ public class NightMinigameManager : MonoBehaviour
     public float spawnInterval = 1f;
     public int fruitsNumber;
     public int neutralized = 0;
-    public float spawnX1;
-    public float spawnX2;
-    public float spawnX3;
+    public float spawnX1 = -0.28f;
+    public float spawnX2 = 2.48f;
+    public float spawnX3 = 8.47f;
     private float timePassed = 0f;
     private int fruitsSpawnCount = 0;
     private bool gameOver = false;
@@ -22,7 +23,7 @@ public class NightMinigameManager : MonoBehaviour
 
     void Start()
     {
-        ze.ammo = fruitsNumber;
+        fruitsNumber = GameManager.straw;
         StartCoroutine(CloseInitialTxtCoroutine());
     }
 
@@ -46,6 +47,8 @@ public class NightMinigameManager : MonoBehaviour
             if (fruitsSpawnCount == fruitsNumber)
             {
                 gameOver = true;
+                //GameManager.straw += neutralized;
+                StartCoroutine(GameOverCoroutine());
             }
 
             timePassed = 0;
@@ -91,5 +94,11 @@ public class NightMinigameManager : MonoBehaviour
         yield return new WaitForSeconds(3);
         initialText.enabled = false;
         gameStart = true;
+    }
+
+    IEnumerator GameOverCoroutine()
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("Day");
     }
 }

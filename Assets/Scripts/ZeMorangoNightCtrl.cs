@@ -17,6 +17,8 @@ public class ZeMorangoNightCtrl : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        ammo = GameManager.straw;
+        UpdateAmmoText();
     }
 
     // Update is called once per frame
