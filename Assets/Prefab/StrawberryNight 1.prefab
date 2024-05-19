@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2548596054079963575}
   - component: {fileID: 6870429766217858478}
   - component: {fileID: -7699573213645729186}
+  - component: {fileID: 5374347085803290677}
   m_Layer: 0
   m_Name: StrawberryNight 1
   m_TagString: bullet
@@ -30,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.21, y: 8.02, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -173,3 +174,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.488755, y: 6.407242}
   m_EdgeRadius: 0
+--- !u!95 &5374347085803290677
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3231025090931828082}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 944fd8f74142a2e4583b9f9c89a27274, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
